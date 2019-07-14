@@ -3,6 +3,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utils.DriverFactory;
+import utils.PageAction;
 import utils.Utils;
 
 import static org.junit.Assert.assertEquals;
@@ -11,6 +12,8 @@ import static utils.DriverFactory.driver;
 public class VegasSite {
     private Utils utils;
     Actions assigner = new Actions(DriverFactory.driver);
+    PageAction action = new PageAction();
+
 
     public VegasSite() {
         PageFactory.initElements(DriverFactory.driver, this);
@@ -57,11 +60,13 @@ public class VegasSite {
     }
 
     public VegasSite setGame() {
+        action.waitForElement(mayfairRoulette);
         mayfairRoulette.click();
         return this;
     }
 
     public VegasSite closeWindow() {
+        action.waitForElement(closeGame);
         closeGame.click();
         return this;
     }

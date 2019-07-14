@@ -1,5 +1,6 @@
 import org.junit.Test;
 import utils.DriverFactory;
+import utils.PageAction;
 
 public class AcceptanceTest extends DriverFactory {
 
