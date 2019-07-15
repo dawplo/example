@@ -19,8 +19,20 @@ public class Utils {
         this.wait = new WebDriverWait(DriverFactory.driver, EXPLICIT_TIMEOUT);
     }
 
-    public void clickAndWait(WebElement clickElement) {
+    public void clickAndWait(WebElement hoverGame) {
         Actions action = new Actions(DriverFactory.driver);
-        action.moveToElement(clickElement).build().perform();
+        action.moveToElement(hoverGame)
+                .build();
+    }
+    public boolean isWebElementVisible(WebElement element) {
+        boolean elementVisible;
+
+        try {
+            element.isDisplayed();
+            elementVisible = true;
+        } catch (Exception e) {
+            elementVisible = false;
+        }
+        return elementVisible;
     }
 }

@@ -1,6 +1,5 @@
 import org.junit.Test;
 import utils.DriverFactory;
-import utils.PageAction;
 
 public class AcceptanceTest extends DriverFactory {
 
@@ -17,8 +16,13 @@ public class AcceptanceTest extends DriverFactory {
     }
 
     @Test
-    public void FindAndPlayGame() {
-        vegasSite.gotoMainPage()
-                .hoverOnGame();
+    public void checkDetailGame() {
+        vegasSite.gotoMainPage();
+        vegasSite.preview();
+        vegasSite.clickMore();
+        vegasSite.playNow();
+        vegasSite.checkTheForm();
     }
+
+
 }
