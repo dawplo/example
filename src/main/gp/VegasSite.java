@@ -95,7 +95,7 @@ public class VegasSite {
 
       public VegasSite preview() {
           Actions action = new Actions(DriverFactory.driver);
-          WebElement we = DriverFactory.driver.findElement(By.xpath("/html/body/div[2]/div/div/div/div/div[4]/div/div[1]/div[3]/div[3]/div[2]/div/div[1]/div/div/div[2]"));
+          WebElement we = DriverFactory.driver.findElement(By.xpath("//img[@alt='Mayfair Roulette']"));
           action.moveToElement(we).perform();
           return this;
     }
