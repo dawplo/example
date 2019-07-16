@@ -18,7 +18,7 @@ public class AcceptanceTest extends DriverFactory {
     @Test
     public void checkDetailGame() {
         vegasSite.gotoMainPage();
-        vegasSite.preview();
+        vegasSite.preview(game);
         vegasSite.clickMore();
         vegasSite.playNow();
         vegasSite.checkTheForm();
